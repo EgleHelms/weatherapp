@@ -23,14 +23,6 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     justify-content: center;
     align-items: center;
-
-    @media (max-width: 550px) {
-      margin-top: 200px;
-    }
-
-    @media (max-width: 400px) {
-      margin-top: 0;
-    }
   }
 ` 
 const AppContainer = styled.div`

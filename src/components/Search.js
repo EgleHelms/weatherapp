@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import React from 'react';
-import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
@@ -50,14 +49,11 @@ const SearchButton = styled.button`
 
 const Search = (props) => {
 
-  const { REACT_APP_PLACES_KEY} = process.env
   return (
     <RenderDiv>
         <Form onSubmit={props.submit}>
             <SearchBar>
-              {/* <GooglePlacesAutocomplete apiKey={REACT_APP_PLACES_KEY}> */}
             <Input  type="text" value={props.value} placeholder="Enter city" onChange={props.change}></Input>
-            {/* </GooglePlacesAutocomplete> */}
             <SearchButton type="submit"><FontAwesomeIcon icon={faSearch} style={{fontSize: "1.5rem", color: "grey"}}/></SearchButton>
             </SearchBar>
 
