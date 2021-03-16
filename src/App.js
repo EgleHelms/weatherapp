@@ -18,21 +18,35 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #root {
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 ` 
+
 const AppContainer = styled.div`
+  margin-top: 100px;
   width: 80%;
-  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 `
+
+const Head = styled.h1`
+  margin: 50px;
+
+  @media (max-width: 400px) {
+    margin: 0 0 20px 0;
+  }
+`
+
+const TodaysResContainer = styled.div`
+  margin-top: 20px;
+`
+
 const App = () => {
 
 const [value, setValue] = useState("");
@@ -129,14 +143,14 @@ if (error === true){
     return (
     <AppContainer>
       <GlobalStyle/>
-      <h1>Weather App</h1>
+      <Head>Weather App</Head>
       <Search 
         value={value}
         showResult={weatherInfo}
         change={handleInput}
         submit={handleSearch}
       />
-      {weatherInfo && <Result weather={weatherInfo}/>}
+      <TodaysResContainer>{weatherInfo && <Result weather={weatherInfo}/>}</TodaysResContainer>
     </AppContainer>
   );
 }

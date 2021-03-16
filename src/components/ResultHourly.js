@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import React from 'react';
 
 const ListContainer = styled.ul`
-    width: 90vw;
+    width: 80vw;
     display: flex;
+    justify-content: space-evenly;
     overflow-x: auto;
 
     ::-webkit-scrollbar {

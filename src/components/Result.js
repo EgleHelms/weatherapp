@@ -14,9 +14,33 @@ font-size: 3rem;
 margin-left: 20px;
 ` 
 const CurrDescStyle = styled.p`
-font-size: 1.5rem;
+font-size: 2rem;
 text-transform: capitalize;
 ` 
+const CityWeather = styled.div`
+@media (min-width: 600px) {
+  margin-right: 30px;
+}
+` 
+const Container1 = styled.div`
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: 800px) {
+    flex-wrap: wrap;
+  }
+`
+
+const Container2 = styled.div`
+  width: 80%;
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (min-width: 800px) {
+    flex-wrap: wrap;
+  }
+`
 
 const Result = (props) => {
 
@@ -42,9 +66,9 @@ const iconChoice = () =>{
 
   return (
 <div>
-      <div  style={{width: "100%",display: "flex"}}>
-          <div style={{width: "100%", display: "flex", justifyContent: "center", flexWrap: "wrap"}}>
-              <div>
+      <Container1>
+          <Container2>
+              <CityWeather>
                 <h1 style={{fontSize: "2.5rem", marginBottom:"0"}}>{props.weather.city}, {props.weather.country}</h1>
                 <h3 style={{marginTop:"0"}}>{props.weather.date}</h3>
                 <div>
@@ -52,11 +76,11 @@ const iconChoice = () =>{
                   <CurrTempStyle>{props.weather.temp}°C</CurrTempStyle>
                   <CurrDescStyle>{props.weather.description}</CurrDescStyle>
                 </div>
-              </div>
+              </CityWeather>
               <ResultDetails weather={props.weather}/>
-          </div>
-      </div>
-      <div>
+          </Container2>
+      </Container1>
+              <div>
           <ResultHourly list={props.weather} />
         </div>
 </div>

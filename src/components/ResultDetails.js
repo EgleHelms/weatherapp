@@ -2,17 +2,34 @@ import styled from 'styled-components';
 import React from 'react';
 
 const DetailsContainer = styled.div`
-min-width: 350px;
+
 display: flex;
 background-color: rgba(248,249,250,0.4);
 border-radius: 5px;
-margin: 10px;
 justify-content: space-evenly;
+flex-wrap: wrap;
+padding: 20px;
+
+@media (min-width: 700px) and (max-width: 900px) {
+  width: 50%;
+}
+
+@media (min-width: 901px) {
+  width: 40%;
+}
+
+
+@media (max-width: 330px) {
+  width: 80%;
+  flex-wrap: wrap;
+}
+
 `
 
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   
   p {
     font-size: 1.5rem;
