@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import React from 'react';
 
 const ListContainer = styled.ul`
+    padding: 0;
     width: 80vw;
     display: flex;
-    justify-content: space-evenly;
     overflow-x: auto;
 
     ::-webkit-scrollbar {
@@ -30,7 +30,7 @@ const ListItem = styled.li`
     flex-direction: column;
     align-items: center;
     background-color: rgba(248,249,250,0.4);
-    margin: 10px;
+    margin: 10px 10px 10px 0;
     border-radius: 5px;
     font-family: inherit;
 `
